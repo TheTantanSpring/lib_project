@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import type { Library, ApiResponse } from "@/types/library"
 
 const BACKEND = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080"
@@ -6,7 +6,7 @@ const BACKEND = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080"
 /**
  * /api/libraries/:id
  */
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(_: NextRequest, { params }: { params: { id: string } }) {
   try {
     const res = await fetch(`${BACKEND}/api/libraries/${params.id}`, {
       cache: "no-store",
