@@ -34,7 +34,9 @@ export default function KakaoMap({
 
   // 1. 카카오 SDK 로드
   useLayoutEffect(() => {
-    const appKey = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY
+    const appKey = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY || "319332f5778a1d0712a15601c14c7c58"
+    console.log("🔑 카카오 API 키:", appKey ? "설정됨" : "없음")
+    
     if (!appKey) {
       setLoadError("카카오 API 키가 설정되지 않았습니다.")
       return
@@ -57,13 +59,16 @@ export default function KakaoMap({
     }
     
     script.onerror = () => {
+      console.error("❌ 카카오 지도 API 로드 실패")
       setLoadError("카카오 지도 API 로드에 실패했습니다.")
     }
 
     document.head.appendChild(script)
 
     return () => {
-      document.head.removeChild(script)
+      if (document.head.contains(script)) {
+        document.head.removeChild(script)
+      }
     }
   }, [])
 
