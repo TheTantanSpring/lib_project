@@ -1,0 +1,40 @@
+# IDE and OS specific
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+/out/
+/target/
+
+# Build artifacts
+/build/
+/dist/
+/node_modules/
+/.next/
+
+# Dependency cache
+.gradle/
+.m2/
+.npm/
+
+# Log files
+*.log
+
+# Large binary files that should not be in git
+*.jar
+*.war
+*.zip
+*.rar
+*.7z
+
+# Local environment files
+.env
+/backend/.env
+/frontend/.env
+
+# Mac OS files
+.DS_Store
+
+# Windows files
+Thumbs.db

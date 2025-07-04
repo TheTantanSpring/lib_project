@@ -1,0 +1,68 @@
+services:
+  # PostgreSQL 데이터베이스 서비스
+  postgres:
+    image: postgres:15
+    container_name: library_postgres
+    # .env 파일에서 데이터베이스 관련 환경 변수를 불러옵니다.
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # 애플리케이션 시작 시 데이터베이스 스키마와 데이터를 초기화합니다.
+      - ./database/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./database/sample-data.sql:/docker-entrypoint-initdb.d/02-sample-data.sql
+    networks:
+      - library_network
+    restart: always # 컨테이너 비정상 종료 시 항상 재시작
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # pgAdmin 데이터베이스 관리 도구
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: library_pgadmin
+    env_file:
+      - .env
+    ports:
+      - "8081:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - library_network
+    restart: always
+    depends_on:
+      - postgres
+
+  # 백엔드 애플리케이션 서비스
+  backend:
+    # backend 디렉토리의 Dockerfile을 사용하여 이미지를 빌드합니다.
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: library_backend
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    networks:
+      - library_network
+    restart: always
+    depends_on:
+      # postgres 서비스가 healthcheck를 통과한 후에 backend 서비스를 시작합니다.
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+    driver: local
+  pgadmin_data:
+    driver: local
+
+networks:
+  library_network:
+    driver: bridge 
