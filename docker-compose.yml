@@ -71,6 +71,10 @@ services:
     networks:
       - library_network
     restart: always
+    environment:
+      # 환경 변수를 명시적으로 설정 (env_file과 함께 사용)
+      - NEXT_PUBLIC_API_BASE_URL=http://3.34.197.195:8080
+      - NEXT_PUBLIC_KAKAO_MAP_API_KEY=${NEXT_PUBLIC_KAKAO_MAP_API_KEY}
     depends_on:
       - backend
 
