@@ -1,0 +1,14 @@
+# Docker 빌드 컨텍스트에 포함시키지 않을 파일 및 폴더
+
+# Git 관련 파일
+.git
+.gitignore
+
+# 로컬 의존성 폴더 (Docker 이미지 안에서 새로 설치할 것이므로 제외)
+node_modules
+
+# Next.js 빌드 결과물 (이것도 이미지 안에서 새로 생성됨)
+.next
+
+# 개발 환경용 파일
+.env.local 
