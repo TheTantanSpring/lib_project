@@ -37,8 +37,12 @@ class SecurityConfig {
     fun corsConfigurationSource(): CorsConfigurationSource {
         val configuration = CorsConfiguration()
         
-        // 프론트엔드 개발 서버의 주소인 http://localhost:3000을 허용된 출처로 추가합니다.
-        configuration.allowedOrigins = listOf("http://localhost:3000")
+        // 개발 및 운영 환경 모두 지원하도록 허용된 출처를 확장합니다.
+        configuration.allowedOrigins = listOf(
+            "http://localhost:3000",           // 로컬 개발 환경
+            "http://3.34.197.195:3000",        // EC2 프론트엔드
+            "http://3.34.197.195:8080"         // EC2 백엔드 (자체 호출용)
+        )
         
         // 허용할 HTTP 메서드를 지정합니다. (GET, POST, PUT, DELETE 등)
         configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
