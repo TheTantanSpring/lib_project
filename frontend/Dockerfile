@@ -33,6 +33,8 @@ ENV NEXT_PUBLIC_API_BASE_URL="http://localhost:8080"
 COPY --from=build /app/.next/standalone ./
 # public 폴더의 정적 에셋(이미지 등)을 복사합니다.
 COPY --from=build /app/public ./public
+# Next.js standalone 모드에서 필요한 정적 파일들을 복사합니다.
+COPY --from=build /app/.next/static ./.next/static
 
 EXPOSE 3000
 
