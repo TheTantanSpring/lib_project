@@ -12,16 +12,25 @@ class ReservationController(
     private val reservationService: ReservationService
 ) {
 
-    // 예약 생성 (임시 버전)
+    // 예약 생성
     @PostMapping
-    fun createReservation(@RequestBody request: ReservationCreateRequestDto): ResponseEntity<ApiResponse<String>> {
+    fun createReservation(@RequestBody request: ReservationCreateRequestDto): ResponseEntity<ApiResponse<ReservationResponseDto>> {
         return try {
+            val reservation = reservationService.createReservation(request)
             ResponseEntity.ok(
-                ApiResponse.success("임시 응답", "예약 생성 API 호출됨 (미구현)")
+                ApiResponse.success(reservation, "예약이 성공적으로 생성되었습니다")
+            )
+        } catch (e: IllegalArgumentException) {
+            ResponseEntity.badRequest().body(
+                ApiResponse.error(e.message ?: "잘못된 요청입니다")
+            )
+        } catch (e: IllegalStateException) {
+            ResponseEntity.badRequest().body(
+                ApiResponse.error(e.message ?: "예약할 수 없는 상태입니다")
             )
         } catch (e: Exception) {
-            ResponseEntity.badRequest().body(
-                ApiResponse.error(e.message ?: "예약 생성 실패")
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("예약 생성 중 오류가 발생했습니다")
             )
         }
     }
@@ -46,19 +55,24 @@ class ReservationController(
             ResponseEntity.badRequest().body(
                 ApiResponse.error(e.message ?: "취소할 수 없는 상태입니다")
             )
+        } catch (e: Exception) {
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("예약 취소 중 오류가 발생했습니다")
+            )
         }
     }
 
-    // 전체 예약 목록 조회 (임시 버전)
+    // 전체 예약 목록 조회
     @GetMapping
-    fun getAllReservations(): ResponseEntity<ApiResponse<String>> {
+    fun getAllReservations(): ResponseEntity<ApiResponse<ReservationListResponseDto>> {
         return try {
+            val reservations = reservationService.getAllReservations()
             ResponseEntity.ok(
-                ApiResponse.success("임시 응답", "예약 목록 조회 API 호출됨 (미구현)")
+                ApiResponse.success(reservations, "예약 목록 조회 성공")
             )
         } catch (e: Exception) {
-            ResponseEntity.badRequest().body(
-                ApiResponse.error(e.message ?: "예약 목록 조회 실패")
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("예약 목록 조회 중 오류가 발생했습니다")
             )
         }
     }
@@ -72,8 +86,8 @@ class ReservationController(
                 ApiResponse.success(reservations, "사용자 예약 목록 조회 성공")
             )
         } catch (e: Exception) {
-            ResponseEntity.badRequest().body(
-                ApiResponse.error(e.message ?: "사용자 예약 목록 조회 실패")
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("사용자 예약 목록 조회 중 오류가 발생했습니다")
             )
         }
     }
@@ -91,8 +105,8 @@ class ReservationController(
                 ApiResponse.error(e.message ?: "도서를 찾을 수 없습니다")
             )
         } catch (e: Exception) {
-            ResponseEntity.badRequest().body(
-                ApiResponse.error(e.message ?: "예약 현황 조회 실패")
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("예약 현황 조회 중 오류가 발생했습니다")
             )
         }
     }
@@ -109,6 +123,10 @@ class ReservationController(
             ResponseEntity.badRequest().body(
                 ApiResponse.error(e.message ?: "예약 정보를 찾을 수 없습니다")
             )
+        } catch (e: Exception) {
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("예약 정보 조회 중 오류가 발생했습니다")
+            )
         }
     }
 
@@ -121,8 +139,8 @@ class ReservationController(
                 ApiResponse.success(expiredReservations, "만료된 예약 처리 완료")
             )
         } catch (e: Exception) {
-            ResponseEntity.badRequest().body(
-                ApiResponse.error(e.message ?: "만료된 예약 처리 실패")
+            ResponseEntity.internalServerError().body(
+                ApiResponse.error("만료된 예약 처리 중 오류가 발생했습니다")
             )
         }
     }

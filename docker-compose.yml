@@ -64,17 +64,13 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: library_frontend
+    env_file:
+      - .env
     ports:
       - "3000:3000"
     networks:
       - library_network
     restart: always
-    environment:
-      # 프론트엔드 컨테이너가 백엔드 API에 접근할 주소를 설정합니다.
-      # EC2의 공개 IP를 직접 사용하거나, 환경 변수로 관리할 수 있습니다.
-      # 주의: 여기서는 Docker 내부 네트워크(예: http://backend:8080)를 사용하지 않습니다.
-      #      브라우저에서 실행되는 Javascript 코드가 직접 API를 호출하기 때문입니다.
-      - NEXT_PUBLIC_API_BASE_URL=http://54.180.112.235:8080
     depends_on:
       - backend
 
