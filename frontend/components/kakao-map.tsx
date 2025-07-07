@@ -34,8 +34,9 @@ export default function KakaoMap({
 
   // 1. 카카오 SDK 로드
   useLayoutEffect(() => {
-    const appKey = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY || "319332f5778a1d0712a15601c14c7c58"
+    const appKey = process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY
     console.log("🔑 카카오 API 키:", appKey ? "설정됨" : "없음")
+    console.log("🔑 실제 API 키:", appKey)
     
     if (!appKey) {
       setLoadError("카카오 API 키가 설정되지 않았습니다.")
