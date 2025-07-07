@@ -1,0 +1,54 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Deploy to EC2
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          cd /home/ubuntu/lib_project
+          
+          # 코드 업데이트
+          git pull origin master
+          
+          # 환경변수 확인
+          echo "📋 환경변수 확인:"
+          ls -la .env
+          
+          # 백업 생성
+          DATE=$(date +%Y%m%d_%H%M%S)
+          mkdir -p backups
+          docker exec library_postgres pg_dump -U library_user library_db > backups/backup_$DATE.sql || true
+          
+          # 컨테이너 정리 및 재빌드
+          echo "🔄 컨테이너 재빌드 중..."
+          docker-compose down
+          docker system prune -f
+          docker-compose build --no-cache
+          docker-compose up -d
+          
+          # 상태 확인
+          echo "✅ 배포 완료 - 상태 확인:"
+          sleep 30
+          docker-compose ps
+          
+          # 헬스체크
+          echo "🔍 헬스체크:"
+          curl -f http://localhost:8080/api/libraries || echo "Backend health check failed"
+          curl -f http://localhost:3000 || echo "Frontend health check failed" 

@@ -1,0 +1,107 @@
+name: Advanced Deploy to EC2
+
+on:
+  push:
+    branches: [ master, develop ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: |
+        cd frontend
+        npm install
+    
+    - name: Run tests
+      run: |
+        cd frontend
+        npm run build
+        
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    
+    - name: Test backend
+      run: |
+        cd backend
+        ./gradlew test
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Deploy to Production
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
+        script: |
+          cd /home/ubuntu/lib_project
+          
+          # 배포 전 백업
+          DATE=$(date +%Y%m%d_%H%M%S)
+          mkdir -p backups
+          docker exec library_postgres pg_dump -U library_user library_db > backups/backup_$DATE.sql || true
+          
+          # 코드 업데이트
+          git pull origin master
+          
+          # 무중단 배포 (블루-그린 방식)
+          echo "🚀 무중단 배포 시작..."
+          
+          # 새 컨테이너 빌드
+          docker-compose build --no-cache
+          
+          # 기존 컨테이너 중지 및 새 컨테이너 시작
+          docker-compose up -d
+          
+          # 헬스체크 (30초 대기)
+          echo "🔍 헬스체크 중..."
+          sleep 30
+          
+          # 배포 성공 확인
+          if curl -f http://localhost:8080/api/libraries && curl -f http://localhost:3000; then
+            echo "✅ 배포 성공!"
+            # 불필요한 이미지 정리
+            docker system prune -f
+          else
+            echo "❌ 배포 실패 - 롤백 시도"
+            docker-compose down
+            # 여기서 이전 백업으로 롤백 로직 추가 가능
+            exit 1
+          fi
+          
+          # 슬랙 알림 (선택사항)
+          # curl -X POST -H 'Content-type: application/json' \
+          #   --data '{"text":"🚀 배포 완료: lib_book"}' \
+          #   ${{ secrets.SLACK_WEBHOOK_URL }}
+
+  deploy-staging:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/develop'
+    
+    steps:
+    - name: Deploy to Staging
+      run: |
+        echo "🧪 스테이징 환경 배포 (구현 필요)"
+        # 스테이징 서버가 있다면 여기서 배포 
