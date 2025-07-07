@@ -14,6 +14,15 @@ RUN pnpm install --frozen-lockfile
 # 2단계: 애플리케이션 빌드 (Build Stage)
 FROM base AS build
 WORKDIR /app
+
+# 환경변수를 빌드 시점에 전달받습니다.
+ARG NEXT_PUBLIC_API_BASE_URL
+ARG NEXT_PUBLIC_KAKAO_MAP_API_KEY
+
+# 환경변수 설정
+ENV NEXT_PUBLIC_API_BASE_URL=$NEXT_PUBLIC_API_BASE_URL
+ENV NEXT_PUBLIC_KAKAO_MAP_API_KEY=$NEXT_PUBLIC_KAKAO_MAP_API_KEY
+
 COPY . .
 # 프로덕션용으로 애플리케이션을 빌드합니다.
 # standalone 모드 설정에 따라 .next/standalone 폴더가 생성됩니다.

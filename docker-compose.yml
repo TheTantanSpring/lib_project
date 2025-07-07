@@ -63,6 +63,9 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ${NEXT_PUBLIC_API_BASE_URL}
+        NEXT_PUBLIC_KAKAO_MAP_API_KEY: ${NEXT_PUBLIC_KAKAO_MAP_API_KEY}
     container_name: library_frontend
     env_file:
       - .env

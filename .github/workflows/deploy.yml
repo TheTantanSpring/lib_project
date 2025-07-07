@@ -40,6 +40,13 @@ jobs:
           echo "🔄 컨테이너 재빌드 중..."
           docker-compose down
           docker system prune -f
+          
+          # 환경변수 설정 확인
+          echo "🔧 환경변수 설정 확인:"
+          ls -la .env
+          grep NEXT_PUBLIC .env || echo "NEXT_PUBLIC 변수 없음"
+          
+          # 빌드 및 실행
           docker-compose build --no-cache
           docker-compose up -d
           
