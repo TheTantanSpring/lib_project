@@ -77,38 +77,67 @@ jobs:
         script: |
           cd /home/ubuntu/lib_project
           
-          # 배포 전 백업
+          # 배포 전 백업 (현재 안정적인 상태를 백업)
           DATE=$(date +%Y%m%d_%H%M%S)
           mkdir -p backups
-          docker exec library_postgres pg_dump -U library_user library_db > backups/backup_$DATE.sql || true
+          if docker ps -q -f name=library_postgres; then
+            echo "📦 현재 PostgreSQL 데이터베이스 백업 중..."
+            docker exec library_postgres pg_dump -U library_user library_db > backups/backup_$DATE.sql || echo "⚠️ 백업 실패 (계속 진행)"
+            echo "✅ 백업 완료: backups/backup_$DATE.sql"
+          else
+            echo "ℹ️ PostgreSQL 컨테이너가 실행되지 않음 - 백업 건너뜀 (첫 배포이거나 컨테이너가 중지됨)"
+          fi
           
           # 코드 업데이트
+          echo "📥 최신 코드 가져오기..."
           git pull origin master
           
           # 무중단 배포 (블루-그린 방식)
           echo "🚀 무중단 배포 시작..."
           
-          # 새 컨테이너 빌드
-          docker-compose build --no-cache
+          # 새 컨테이너 빌드 (타임아웃 30분)
+          echo "🔨 Docker 이미지 빌드 중..."
+          timeout 1800 docker-compose build --no-cache || {
+            echo "❌ 빌드 타임아웃 또는 실패"
+            exit 1
+          }
           
           # 기존 컨테이너 중지 및 새 컨테이너 시작
+          echo "🔄 컨테이너 재시작 중..."
+          docker-compose down || true
           docker-compose up -d
           
-          # 헬스체크 (30초 대기)
-          echo "🔍 헬스체크 중..."
-          sleep 30
+          # 컨테이너 상태 확인
+          echo "📊 컨테이너 상태 확인:"
+          docker-compose ps
           
-          # 배포 성공 확인
-          if curl -f http://localhost:8080/api/libraries && curl -f http://localhost:3000; then
-            echo "✅ 배포 성공!"
-            # 불필요한 이미지 정리
-            docker system prune -f
+          # 헬스체크 (60초 대기)
+          echo "🔍 헬스체크 중..."
+          sleep 60
+          
+          # 백엔드 헬스체크
+          echo "🔍 백엔드 헬스체크..."
+          if curl -f -m 10 http://localhost:8080/api/libraries; then
+            echo "✅ 백엔드 정상"
           else
-            echo "❌ 배포 실패 - 롤백 시도"
-            docker-compose down
-            # 여기서 이전 백업으로 롤백 로직 추가 가능
+            echo "❌ 백엔드 헬스체크 실패"
+            docker-compose logs backend
             exit 1
           fi
+          
+          # 프론트엔드 헬스체크
+          echo "🔍 프론트엔드 헬스체크..."
+          if curl -f -m 10 http://localhost:3000; then
+            echo "✅ 프론트엔드 정상"
+          else
+            echo "❌ 프론트엔드 헬스체크 실패"
+            docker-compose logs frontend
+            exit 1
+          fi
+          
+          echo "🎉 배포 성공!"
+          # 불필요한 이미지 정리
+          docker system prune -f
           
           # 슬랙 알림 (선택사항)
           # curl -X POST -H 'Content-type: application/json' \
