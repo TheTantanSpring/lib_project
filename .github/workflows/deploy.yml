@@ -47,8 +47,8 @@ jobs:
           ls -la .env
           grep NEXT_PUBLIC .env || echo "NEXT_PUBLIC 변수 없음"
           
-          # 빌드 및 실행
-          docker-compose build --no-cache
+          # 빌드 및 실행 (캐시 사용)
+          docker-compose build
           docker-compose up -d
           
           # 상태 확인

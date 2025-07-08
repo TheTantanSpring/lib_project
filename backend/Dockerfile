@@ -2,24 +2,27 @@
 FROM gradle:8.7-jdk17 AS build
 WORKDIR /home/gradle/src
 
-# 빌드 컨텍스트를 복사합니다.
-COPY --chown=gradle:gradle . .
+# 의존성 관리를 위한 파일만 먼저 복사
+COPY build.gradle.kts settings.gradle.kts ./
 
-# Gradle을 사용하여 실행 가능한 JAR 파일을 빌드합니다.
-# --no-daemon 옵션은 CI/CD 환경에서 권장됩니다.
+# 의존성을 먼저 다운로드하여 레이어 캐시 활용
+RUN gradle dependencies --no-daemon
+
+# 전체 소스 코드를 복사
+COPY . .
+
+# Gradle을 사용하여 실행 가능한 JAR 파일을 빌드
 RUN gradle bootJar --no-daemon
 
 # Stage 2: 가벼운 Java 런타임 환경에서 최종 이미지 생성
 FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
 
-# 빌드 단계에서 생성된 JAR 파일을 복사합니다.
-# build/libs/ 경로 아래의 모든 .jar 파일을 app.jar로 복사합니다.
+# 빌드 단계에서 생성된 JAR 파일을 복사
 COPY --from=build /home/gradle/src/build/libs/*.jar app.jar
 
-# 애플리케이션이 실행될 포트를 노출합니다.
+# 애플리케이션이 실행될 포트를 노출
 EXPOSE 8080
 
 # 애플리케이션 실행 명령어
-# spring.profiles.active=prod를 설정하여 운영 환경 프로필을 활성화합니다.
 ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=prod", "app.jar"] 
