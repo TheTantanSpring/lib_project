@@ -24,8 +24,9 @@ jobs:
         script: |
           cd /home/ubuntu/lib_project
           
-          # 코드 업데이트
-          git pull origin master
+          # 코드 강제 업데이트 (force push 대응)
+          git fetch origin
+          git reset --hard origin/master
           
           # 환경변수 확인
           echo "📋 환경변수 확인:"
