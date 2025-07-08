@@ -46,6 +46,7 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    environment: production
     if: github.ref == 'refs/heads/master'
     
     steps:
@@ -55,9 +56,9 @@ jobs:
     - name: Test SSH Connection
       uses: appleboy/ssh-action@v0.1.5
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
         debug: true
         script: |
           echo "✅ SSH 연결 성공!"
@@ -68,9 +69,9 @@ jobs:
     - name: Deploy to Production
       uses: appleboy/ssh-action@v0.1.5
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_KEY }}
         debug: true
         timeout: 60s
         script: |
