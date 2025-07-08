@@ -1,10 +1,13 @@
-name: Advanced Deploy to EC2
+name: Advanced Deploy to EC2 (DISABLED)
 
+# 비활성화 - 타임아웃 문제로 인해 임시 중단
+# on:
+#   push:
+#     branches: [ master ]
+
+# 수동 실행만 가능하도록 변경
 on:
-  push:
-    branches: [ master, develop ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -88,16 +91,17 @@ jobs:
             echo "ℹ️ PostgreSQL 컨테이너가 실행되지 않음 - 백업 건너뜀 (첫 배포이거나 컨테이너가 중지됨)"
           fi
           
-          # 코드 업데이트
+          # 코드 강제 업데이트 (force push 대응)
           echo "📥 최신 코드 가져오기..."
-          git pull origin master
+          git fetch origin
+          git reset --hard origin/master
           
           # 무중단 배포 (블루-그린 방식)
           echo "🚀 무중단 배포 시작..."
           
-          # 새 컨테이너 빌드 (타임아웃 30분)
+          # 새 컨테이너 빌드 (캐시 사용으로 속도 향상)
           echo "🔨 Docker 이미지 빌드 중..."
-          timeout 1800 docker-compose build --no-cache || {
+          timeout 1800 docker-compose build || {
             echo "❌ 빌드 타임아웃 또는 실패"
             exit 1
           }
@@ -144,13 +148,4 @@ jobs:
           #   --data '{"text":"🚀 배포 완료: lib_book"}' \
           #   ${{ secrets.SLACK_WEBHOOK_URL }}
 
-  deploy-staging:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/develop'
-    
-    steps:
-    - name: Deploy to Staging
-      run: |
-        echo "🧪 스테이징 환경 배포 (구현 필요)"
-        # 스테이징 서버가 있다면 여기서 배포 
+  # deploy-staging job 제거 - 현재 사용하지 않음 
