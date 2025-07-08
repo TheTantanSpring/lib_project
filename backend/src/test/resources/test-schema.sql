@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS users;
 
 -- 도서관 테이블
 CREATE TABLE libraries (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     address VARCHAR(500) NOT NULL,
     phone VARCHAR(20),
@@ -21,7 +21,7 @@ CREATE TABLE libraries (
 
 -- 사용자 테이블
 CREATE TABLE users (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -33,7 +33,7 @@ CREATE TABLE users (
 
 -- 도서 테이블
 CREATE TABLE books (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     library_id BIGINT NOT NULL,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,

@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">13</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.001s</div>
+<div class="counter">0.088s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="percent">92%</div>
 <p>successful</p>
 </div>
 </td>
@@ -73,162 +73,45 @@
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="initializationError"></a>
-<h3 class="failures">initializationError</h3>
+<a name="concurrencyTestGetLibraries()"></a>
+<h3 class="failures">동시성 테스트 - 여러 사용자가 동시에 조회</h3>
 <span class="code">
-<pre>org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.library.library.LibraryIntegrationTest': Unsatisfied dependency expressed through field 'mockMvc': No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:772)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752)
-	at app//org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
-	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
-	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:397)
-	at app//org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
-	at app//org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
-	at app//org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:247)
-	at app//org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base@17.0.14/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base@17.0.14/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base@17.0.14/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base@17.0.14/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base@17.0.14/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base@17.0.14/java.util.Optional.orElseGet(Optional.java:364)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at app//org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$before$2(ClassBasedTestDescriptor.java:204)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:203)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@17.0.14/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1878)
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1404)
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769)
-	... 83 more
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
-<h2>Tests</h2>
-<table>
-<thead>
-<tr>
-<th>Test</th>
-<th>Duration</th>
-<th>Result</th>
-</tr>
-</thead>
-<tr>
-<td class="failures">initializationError</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
-</tr>
-</table>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>15:57:35.087 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.library.LibraryIntegrationTest]: LibraryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:57:35.103 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.library.LibraryIntegrationTest
-15:57:35.110 [Test worker] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.library.library.LibraryIntegrationTest@5a2c6a67]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.library.library.LibraryIntegrationTest': Unsatisfied dependency expressed through field 'mockMvc': No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:772)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:397)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:247)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+<pre>java.lang.AssertionError: 일부 요청이 완료되지 않았습니다
+	at com.library.library.LibraryIntegrationTest.concurrencyTestGetLibraries(LibraryIntegrationTest.kt:243)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$before$2(ClassBasedTestDescriptor.java:204)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:203)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
 	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
@@ -279,12 +162,791 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1878)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1404)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769)
-	... 83 common frames omitted
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">동시성 테스트 - 여러 사용자가 동시에 조회</td>
+<td class="failures">concurrencyTestGetLibraries()</td>
+<td class="failures">0.012s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="success">모든 도서관 조회 API 테스트</td>
+<td class="success">getAllLibraries()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">도서관 ID로 조회 API 테스트</td>
+<td class="success">getLibraryById()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">존재하지 않는 도서관 조회 API 테스트</td>
+<td class="success">getLibraryByIdNotFound()</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">성능 테스트 - 모든 도서관 조회</td>
+<td class="success">performanceTestGetAllLibraries()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">도서관 주소로 검색 API 테스트</td>
+<td class="success">searchLibrariesByAddress()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">도서관 위치 기반 검색 API 테스트</td>
+<td class="success">searchLibrariesByLocation()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">도서관 이름으로 검색 API 테스트</td>
+<td class="success">searchLibrariesByName()</td>
+<td class="success">0.018s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">빈 검색 조건으로 검색 API 테스트</td>
+<td class="success">searchLibrariesWithEmptyParams()</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">잘못된 매개변수로 검색 API 테스트</td>
+<td class="success">searchLibrariesWithInvalidParams()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">복합 검색 조건 API 테스트</td>
+<td class="success">searchLibrariesWithMultipleParams()</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">API 응답 구조 검증 테스트</td>
+<td class="success">validateApiResponseStructure()</td>
+<td class="success">0.006s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">데이터 유효성 검증 테스트</td>
+<td class="success">validateDataIntegrity()</td>
+<td class="success">0.005s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>15:41:40.427 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.library.LibraryIntegrationTest]: LibraryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:41:40.432 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.library.LibraryIntegrationTest
+15:41:40.435 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.435 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.441 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;name&quot;) like upper(?) escape '\'
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;name&quot;) like upper(?) escape '\'
+15:41:40.450 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.453 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
+15:41:40.453 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
+15:41:40.454 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+15:41:40.455 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.458 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.458 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.460 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;latitude&quot; between ? and ? 
+        and l1_0.&quot;longitude&quot; between ? and ?
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;latitude&quot; between ? and ? 
+        and l1_0.&quot;longitude&quot; between ? and ?
+15:41:40.462 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.464 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
+15:41:40.464 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
+15:41:40.465 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+15:41:40.466 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.468 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/999
+15:41:40.468 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/999
+15:41:40.469 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        l1_0.&quot;id&quot;=?
+15:41:40.469 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.471 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.471 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.471 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.471 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.471 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.471 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.472 [Thread-15] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.472 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.472 [Thread-15] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.471 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.472 [Thread-16] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.472 [Thread-16] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.473 [Thread-11] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.473 [Thread-12] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.471 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.473 [Thread-10] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.473 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.473 [Thread-14] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.474 [Thread-11] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.474 [Thread-17] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.475 [Thread-17] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.475 [Thread-16] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+15:41:40.475 [Thread-12] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.475 [Thread-15] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.476 [Thread-17] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.476 [Thread-18] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.476 [Thread-18] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.476 [Thread-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.476 [Thread-15] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.476 [Thread-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.477 [Thread-19] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.477 [Thread-19] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.477 [Thread-13] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.477 [Thread-18] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.476 [Thread-16] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.477 [Thread-19] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.478 [Thread-19] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.479 [Thread-17] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.479 [Thread-18] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.479 [Thread-13] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.484 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.484 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.485 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.487 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.491 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.491 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.493 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;address&quot;) like upper(?) escape '\'
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;address&quot;) like upper(?) escape '\'
+15:41:40.495 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.499 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.499 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.500 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.501 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.503 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.503 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.504 [Test worker] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Double'; For input string: &quot;invalid&quot;]
+15:41:40.504 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.507 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:41:40.507 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:41:40.508 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.509 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.513 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.514 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.516 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0
+15:41:40.517 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.520 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:41:40.520 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:41:40.521 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;name&quot;) like upper(?) escape '\'
+Hibernate: 
+    select
+        l1_0.&quot;id&quot;,
+        l1_0.&quot;address&quot;,
+        l1_0.&quot;created_at&quot;,
+        l1_0.&quot;description&quot;,
+        l1_0.&quot;latitude&quot;,
+        l1_0.&quot;longitude&quot;,
+        l1_0.&quot;name&quot;,
+        l1_0.&quot;opening_hours&quot;,
+        l1_0.&quot;phone&quot;,
+        l1_0.&quot;updated_at&quot; 
+    from
+        &quot;libraries&quot; l1_0 
+    where
+        upper(l1_0.&quot;name&quot;) like upper(?) escape '\'
+15:41:40.522 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 </pre>
 </span>
 </div>
@@ -296,7 +958,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.5</a> at 2025. 7. 3. 오후 3:57:35</p>
+<a href="http://www.gradle.org">Gradle 8.5</a> at 2025. 7. 8. 오후 3:41:40</p>
 </div>
 </div>
 </body>

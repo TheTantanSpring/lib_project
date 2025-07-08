@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
 import org.springframework.test.context.ActiveProfiles
@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
 import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
-@AutoConfigureWebMvc
+@AutoConfigureMockMvc
 @ActiveProfiles("test")
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @Transactional
@@ -36,7 +36,7 @@ class LibraryIntegrationTest {
         // when & then
         mockMvc.perform(get("/api/libraries"))
             .andExpect(status().isOk)
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
             .andExpect(jsonPath("$.success").value(true))
             .andExpect(jsonPath("$.message").value("도서관 목록 조회 성공"))
             .andExpect(jsonPath("$.data").isArray)
@@ -53,7 +53,7 @@ class LibraryIntegrationTest {
         // when & then - 존재하는 도서관 조회
         mockMvc.perform(get("/api/libraries/1"))
             .andExpect(status().isOk)
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
             .andExpect(jsonPath("$.success").value(true))
             .andExpect(jsonPath("$.message").value("도서관 정보 조회 성공"))
             .andExpect(jsonPath("$.data.id").value(1))
@@ -78,7 +78,7 @@ class LibraryIntegrationTest {
         mockMvc.perform(get("/api/libraries/search")
             .param("name", "강남"))
             .andExpect(status().isOk)
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+            .andExpect(content().contentType("application/json;charset=UTF-8"))
             .andExpect(jsonPath("$.success").value(true))
             .andExpect(jsonPath("$.message").value("도서관 검색 성공"))
             .andExpect(jsonPath("$.data").isArray)

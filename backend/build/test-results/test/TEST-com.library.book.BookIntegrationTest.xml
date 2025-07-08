@@ -1,247 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="도서 도메인 통합 테스트" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-07-03T06:57:35" hostname="YO-ON77" time="0.003">
+<testsuite name="도서 도메인 통합 테스트" tests="30" skipped="0" failures="5" errors="0" timestamp="2025-07-08T06:41:39" hostname="deviantces-Mac-mini.local" time="0.899">
   <properties/>
-  <testcase name="initializationError" classname="com.library.book.BookIntegrationTest" time="0.003">
-    <failure message="org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.library.book.BookIntegrationTest': Unsatisfied dependency expressed through field 'mockMvc': No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}" type="org.springframework.beans.factory.UnsatisfiedDependencyException">org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.library.book.BookIntegrationTest': Unsatisfied dependency expressed through field 'mockMvc': No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:772)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752)
-	at app//org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
-	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
-	at app//org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:397)
-	at app//org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
-	at app//org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
-	at app//org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:247)
-	at app//org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base@17.0.14/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base@17.0.14/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base@17.0.14/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base@17.0.14/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base@17.0.14/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base@17.0.14/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base@17.0.14/java.util.Optional.orElseGet(Optional.java:364)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at app//org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$before$2(ClassBasedTestDescriptor.java:204)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:203)
-	at app//org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base@17.0.14/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at app//org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at app//org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at app//org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at app//org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at app//org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at app//org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at app//org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at app//org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base@17.0.14/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base@17.0.14/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base@17.0.14/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1878)
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1404)
-	at app//org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
-	at app//org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769)
-	... 83 more
-</failure>
-  </testcase>
-  <system-out><![CDATA[15:57:27.239 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.library.book.BookIntegrationTest]: BookIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:57:27.351 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.book.BookIntegrationTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::                (v3.2.0)
-
-15:57:27.843 [Test worker] INFO  c.library.book.BookIntegrationTest - Starting BookIntegrationTest using Java 17.0.14 with PID 13228 (started by ryujy in C:\cusorAI\lib_book\backend)
-15:57:27.844 [Test worker] DEBUG c.library.book.BookIntegrationTest - Running with Spring Boot v3.2.0, Spring v6.1.1
-15:57:27.844 [Test worker] INFO  c.library.book.BookIntegrationTest - The following 1 profile is active: "test"
-15:57:28.922 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-15:57:29.007 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
-15:57:29.526 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-15:57:29.773 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-15:57:29.775 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-15:57:29.976 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-15:57:30.143 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
-15:57:30.219 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-15:57:30.562 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-15:57:30.628 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-15:57:31.297 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-15:57:31.311 [Test worker] DEBUG org.hibernate.SQL - 
-    drop table if exists books cascade 
-Hibernate: 
-    drop table if exists books cascade 
-15:57:31.313 [Test worker] DEBUG org.hibernate.SQL - 
-    drop table if exists libraries cascade 
-Hibernate: 
-    drop table if exists libraries cascade 
-15:57:31.318 [Test worker] DEBUG org.hibernate.SQL - 
-    create table books (
-        available_copies integer not null,
-        publication_year integer,
-        total_copies integer not null,
-        created_at timestamp(6) not null,
-        id bigint generated by default as identity,
-        library_id bigint not null,
-        updated_at timestamp(6) not null,
-        isbn varchar(20),
-        author varchar(255) not null,
-        category varchar(255),
-        publisher varchar(255),
-        status varchar(255) check (status in ('AVAILABLE','UNAVAILABLE','MAINTENANCE')),
-        title varchar(255) not null,
-        primary key (id)
-    )
-Hibernate: 
-    create table books (
-        available_copies integer not null,
-        publication_year integer,
-        total_copies integer not null,
-        created_at timestamp(6) not null,
-        id bigint generated by default as identity,
-        library_id bigint not null,
-        updated_at timestamp(6) not null,
-        isbn varchar(20),
-        author varchar(255) not null,
-        category varchar(255),
-        publisher varchar(255),
-        status varchar(255) check (status in ('AVAILABLE','UNAVAILABLE','MAINTENANCE')),
-        title varchar(255) not null,
-        primary key (id)
-    )
-15:57:31.321 [Test worker] DEBUG org.hibernate.SQL - 
-    create table libraries (
-        latitude float(53),
-        longitude float(53),
-        created_at timestamp(6) not null,
-        id bigint generated by default as identity,
-        updated_at timestamp(6) not null,
-        address TEXT not null,
-        description TEXT,
-        name varchar(255) not null,
-        opening_hours TEXT,
-        phone varchar(255),
-        primary key (id)
-    )
-Hibernate: 
-    create table libraries (
-        latitude float(53),
-        longitude float(53),
-        created_at timestamp(6) not null,
-        id bigint generated by default as identity,
-        updated_at timestamp(6) not null,
-        address TEXT not null,
-        description TEXT,
-        name varchar(255) not null,
-        opening_hours TEXT,
-        phone varchar(255),
-        primary key (id)
-    )
-15:57:31.324 [Test worker] DEBUG org.hibernate.SQL - 
-    alter table if exists books 
-       add constraint FK6gdvp1ko0pawgafhn1hyhsxia 
-       foreign key (library_id) 
-       references libraries
-Hibernate: 
-    alter table if exists books 
-       add constraint FK6gdvp1ko0pawgafhn1hyhsxia 
-       foreign key (library_id) 
-       references libraries
-15:57:31.329 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-15:57:32.246 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-15:57:33.520 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-15:57:34.316 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@e7e6e94, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@cb7ec2c, org.springframework.security.web.context.SecurityContextHolderFilter@51768401, org.springframework.security.web.header.HeaderWriterFilter@6e7da5f4, org.springframework.web.filter.CorsFilter@5e491535, org.springframework.security.web.authentication.logout.LogoutFilter@1c17d98c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@717616da, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6f677c34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@55947250, org.springframework.security.web.access.ExceptionTranslationFilter@3d376d9b, org.springframework.security.web.access.intercept.AuthorizationFilter@53ca202f]
-15:57:34.852 [Test worker] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-15:57:34.970 [Test worker] INFO  c.library.book.BookIntegrationTest - Started BookIntegrationTest in 7.468 seconds (process running for 8.717)
-15:57:35.041 [Test worker] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener] to prepare test instance [com.library.book.BookIntegrationTest@3f341562]
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.library.book.BookIntegrationTest': Unsatisfied dependency expressed through field 'mockMvc': No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:772)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:752)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:145)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:493)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1420)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:397)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:142)
-	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:97)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:247)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310)
-	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
-	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290)
+  <testcase name="대여 불가능한 도서 대여 시도 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.401"/>
+  <testcase name="데이터 유효성 검증 테스트" classname="com.library.book.BookIntegrationTest" time="0.007"/>
+  <testcase name="동시성 테스트 - 동시 대여 시도" classname="com.library.book.BookIntegrationTest" time="0.037">
+    <failure message="java.lang.AssertionError: 성공한 대여 수가 3이 아닙니다: 5" type="java.lang.AssertionError">java.lang.AssertionError: 성공한 대여 수가 3이 아닙니다: 5
+	at com.library.book.BookIntegrationTest.concurrencyTestBorrowBook(BookIntegrationTest.kt:488)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$before$2(ClassBasedTestDescriptor.java:204)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:203)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:148)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
 	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
 	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
 	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
@@ -292,12 +90,3588 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.springframework.test.web.servlet.MockMvc' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1878)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1404)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1348)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:769)
-	... 83 common frames omitted
+</failure>
+  </testcase>
+  <testcase name="잘못된 데이터로 도서 등록 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.13"/>
+  <testcase name="도서 저자로 검색 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.037"/>
+  <testcase name="존재하지 않는 도서관에 도서 등록 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.005"/>
+  <testcase name="도서관별 대여 가능한 도서 수 통계 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.008"/>
+  <testcase name="카테고리별 통계 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.008"/>
+  <testcase name="도서관별 도서 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.012"/>
+  <testcase name="모든 도서 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.015"/>
+  <testcase name="존재하지 않는 도서 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.004"/>
+  <testcase name="도서 정보 수정 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.011"/>
+  <testcase name="모든 카테고리 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.005"/>
+  <testcase name="도서 ID로 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.006">
+    <failure message="java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;3&gt; but was:&lt;1&gt;" type="java.lang.AssertionError">java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;3&gt; but was:&lt;1&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.library.book.BookIntegrationTest.getBookById(BookIntegrationTest.kt:67)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="표준 카테고리 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.004"/>
+  <testcase name="도서 카테고리로 검색 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.011"/>
+  <testcase name="인기 카테고리 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.01"/>
+  <testcase name="API 응답 구조 검증 테스트" classname="com.library.book.BookIntegrationTest" time="0.027"/>
+  <testcase name="도서관별 카테고리 통계 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.019"/>
+  <testcase name="카테고리 제안 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.011"/>
+  <testcase name="도서관별 대여 가능한 도서 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.015"/>
+  <testcase name="복합 검색 조건 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.008"/>
+  <testcase name="도서 반납 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.03">
+    <failure message="java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;3&gt; but was:&lt;1&gt;" type="java.lang.AssertionError">java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;3&gt; but was:&lt;1&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.library.book.BookIntegrationTest.returnBook(BookIntegrationTest.kt:319)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="도서 등록 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.01">
+    <failure message="java.lang.AssertionError: Status expected:&lt;201&gt; but was:&lt;400&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Status expected:&lt;201&gt; but was:&lt;400&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.StatusResultMatchers.lambda$matcher$9(StatusResultMatchers.java:637)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.library.book.BookIntegrationTest.createBook(BookIntegrationTest.kt:195)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="도서관별 총 도서 수 통계 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.015"/>
+  <testcase name="도서 대여 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.011">
+    <failure message="java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;2&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: JSON path &quot;$.data.availableCopies&quot; expected:&lt;2&gt; but was:&lt;0&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.util.JsonPathExpectationsHelper.assertValue(JsonPathExpectationsHelper.java:123)
+	at org.springframework.test.web.servlet.result.JsonPathResultMatchers.lambda$value$2(JsonPathResultMatchers.java:111)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.library.book.BookIntegrationTest.borrowBook(BookIntegrationTest.kt:286)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="성능 테스트 - 대량 도서 조회" classname="com.library.book.BookIntegrationTest" time="0.009"/>
+  <testcase name="도서 삭제 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.007"/>
+  <testcase name="도서 제목으로 검색 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.006"/>
+  <testcase name="대여 가능한 도서 조회 API 테스트" classname="com.library.book.BookIntegrationTest" time="0.012"/>
+  <system-out><![CDATA[15:41:36.830 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.library.book.BookIntegrationTest]: BookIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:41:36.886 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.book.BookIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+15:41:37.066 [Test worker] INFO  c.library.book.BookIntegrationTest - Starting BookIntegrationTest using Java 17.0.15 with PID 25829 (started by deviantce in /Users/deviantce/Documents/ryujy/lib_project/backend)
+15:41:37.066 [Test worker] DEBUG c.library.book.BookIntegrationTest - Running with Spring Boot v3.2.0, Spring v6.1.1
+15:41:37.066 [Test worker] INFO  c.library.book.BookIntegrationTest - The following 1 profile is active: "test"
+15:41:37.422 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:41:37.459 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 5 JPA repository interfaces.
+15:41:37.635 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:41:37.722 [Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+15:41:37.723 [Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:41:37.786 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+15:41:37.816 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.3.1.Final
+15:41:37.833 [Test worker] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+15:41:37.928 [Test worker] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+15:41:37.951 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+15:41:38.291 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:41:38.292 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:41:38.532 [Test worker] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+15:41:39.213 [Test worker] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:41:39.372 [Test worker] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@563a32a2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@10e25b2a, org.springframework.security.web.context.SecurityContextHolderFilter@46ead542, org.springframework.security.web.header.HeaderWriterFilter@1cbd2c1a, org.springframework.web.filter.CorsFilter@65b75087, org.springframework.security.web.authentication.logout.LogoutFilter@6e46f5c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6fd364a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@62b26bef, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3cf09930, org.springframework.security.web.access.ExceptionTranslationFilter@317d7a5e, org.springframework.security.web.access.intercept.AuthorizationFilter@315f4718]
+15:41:39.473 [Test worker] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+15:41:39.500 [Test worker] INFO  o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+15:41:39.500 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+15:41:39.501 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+15:41:39.516 [Test worker] INFO  c.library.book.BookIntegrationTest - Started BookIntegrationTest in 2.572 seconds (process running for 3.073)
+15:41:39.801 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.804 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.841 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.846 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.896 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.901 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.901 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.902 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.903 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.903 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.904 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.905 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.905 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.906 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.929 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/1
+15:41:39.929 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/1
+15:41:39.931 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.932 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.933 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.937 [Thread-5] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.937 [Thread-6] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.937 [Thread-8] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.937 [Thread-7] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.937 [Thread-5] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.937 [Thread-6] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.937 [Thread-9] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:39.937 [Thread-8] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.937 [Thread-7] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.937 [Thread-9] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:39.938 [Thread-5] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.938 [Thread-5] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.939 [Thread-8] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.940 [Thread-8] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.950 [Thread-9] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.951 [Thread-9] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.960 [Thread-8] DEBUG org.hibernate.SQL - 
+    update
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+Hibernate: 
+    update
+        "books" 
+    set
+15:41:39.960 [Thread-5] DEBUG org.hibernate.SQL - 
+    update
+        "author"=?,
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "category"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "created_at"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "id"=?
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+15:41:39.960 [Thread-9] DEBUG org.hibernate.SQL - 
+    update
+        "books" 
+    set
+    where
+        "id"=?
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+Hibernate: 
+        "library_id"=?,
+    update
+        "publication_year"=?,
+        "books" 
+        "publisher"=?,
+    set
+        "status"=?,
+        "author"=?,
+        "title"=?,
+        "available_copies"=?,
+        "total_copies"=?,
+        "category"=?,
+        "updated_at"=? 
+    where
+        "created_at"=?,
+        "id"=?
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+Hibernate: 
+    update
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+15:41:39.964 [Thread-6] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.965 [Thread-6] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.966 [Thread-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.967 [Thread-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.967 [Thread-6] DEBUG org.hibernate.SQL - 
+    update
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+15:41:39.967 [Thread-7] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+Hibernate: 
+        b1_0."author",
+    update
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        "books" 
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    set
+    where
+        b1_0."id"=?
+        "author"=?,
+15:41:39.967 [Thread-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:39.968 [Thread-7] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:39.969 [Thread-7] DEBUG org.hibernate.SQL - 
+    update
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+Hibernate: 
+    update
+        "books" 
+    set
+        "author"=?,
+        "available_copies"=?,
+        "category"=?,
+        "created_at"=?,
+        "isbn"=?,
+        "library_id"=?,
+        "publication_year"=?,
+        "publisher"=?,
+        "status"=?,
+        "title"=?,
+        "total_copies"=?,
+        "updated_at"=? 
+    where
+        "id"=?
+15:41:39.969 [Thread-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:39.970 [Thread-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.063 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books
+15:41:40.063 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books
+15:41:40.101 [Test worker] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.library.common.response.ApiResponse<com.library.book.dto.BookResponseDto>> com.library.book.controller.BookController.createBook(com.library.book.dto.BookCreateRequestDto) with 2 errors: [Field error in object 'bookCreateRequestDto' on field 'totalCopies': rejected value [0]; codes [Positive.bookCreateRequestDto.totalCopies,Positive.totalCopies,Positive.int,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [bookCreateRequestDto.totalCopies,totalCopies]; arguments []; default message [totalCopies]]; default message [총 권수는 1 이상이어야 합니다]] [Field error in object 'bookCreateRequestDto' on field 'title': rejected value []; codes [NotBlank.bookCreateRequestDto.title,NotBlank.title,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [bookCreateRequestDto.title,title]; arguments []; default message [title]]; default message [도서 제목은 필수입니다]] ]
+15:41:40.101 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.104 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/search
+15:41:40.104 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/search
+15:41:40.131 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+15:41:40.134 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.134 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.135 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.137 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.141 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books
+15:41:40.142 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books
+15:41:40.143 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.144 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.146 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/stats/library/1/available
+15:41:40.146 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/stats/library/1/available
+15:41:40.149 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+Hibernate: 
+    select
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+15:41:40.151 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.154 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories/statistics
+15:41:40.154 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories/statistics
+15:41:40.157 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+Hibernate: 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+15:41:40.159 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.161 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/library/1
+15:41:40.162 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/library/1
+15:41:40.167 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=?
+15:41:40.168 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.170 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.174 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books
+15:41:40.174 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books
+15:41:40.176 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+15:41:40.176 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.177 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.178 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.178 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.179 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.182 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.190 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/9999
+15:41:40.190 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/9999
+15:41:40.191 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.191 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.196 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing PUT /api/books/1
+15:41:40.196 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured PUT /api/books/1
+15:41:40.200 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.201 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.202 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.205 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories
+15:41:40.205 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories
+15:41:40.207 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        distinct b1_0."category" 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    order by
+        b1_0."category"
+Hibernate: 
+    select
+        distinct b1_0."category" 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    order by
+        b1_0."category"
+15:41:40.208 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.210 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/1
+15:41:40.211 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/1
+15:41:40.211 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.211 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.212 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/books/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.library.book.controller.BookController
+           Method = com.library.book.controller.BookController#getBookById(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json;charset=UTF-8
+             Body = {"success":true,"message":"도서 정보 조회 성공","data":{"id":1,"libraryId":1,"libraryName":"서울시립도서관","title":"스프링 부트 실전 활용","author":"김철수","isbn":"978-1234567890","publisher":"테크출판사","publicationYear":2023,"category":"컴퓨터/IT","totalCopies":3,"availableCopies":1,"status":"AVAILABLE","createdAt":"2025-07-08T15:41:37.742764","updatedAt":"2025-07-08T15:41:39.968825","categoryInfo":{"name":"컴퓨터/IT","description":"프로그래밍, 소프트웨어, 하드웨어, 네트워크 관련 도서","isStandard":true,"subCategories":["프로그래밍","데이터베이스","네트워크","AI/ML","웹개발"]}},"timestamp":1751956900212}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+15:41:40.217 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories/standard
+15:41:40.217 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories/standard
+15:41:40.218 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.221 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/search
+15:41:40.221 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/search
+15:41:40.223 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+15:41:40.225 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.225 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.226 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.227 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.227 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.229 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.233 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories/popular
+15:41:40.233 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories/popular
+15:41:40.234 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+Hibernate: 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+15:41:40.236 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.244 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books
+15:41:40.244 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books
+15:41:40.245 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+15:41:40.246 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.251 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.253 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.254 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.255 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.260 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.272 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories/statistics/library/1
+15:41:40.272 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories/statistics/library/1
+15:41:40.279 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+Hibernate: 
+    select
+        b1_0."category",
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."category" is not null 
+    group by
+        b1_0."category" 
+    order by
+        count(b1_0."id") desc
+15:41:40.284 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.293 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/categories/suggest
+15:41:40.293 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/categories/suggest
+15:41:40.297 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.303 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/available/library/1
+15:41:40.303 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/available/library/1
+15:41:40.309 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=? 
+        and b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+15:41:40.311 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.313 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.318 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/search
+15:41:40.318 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/search
+15:41:40.320 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+15:41:40.321 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.322 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.328 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:40.328 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:40.330 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.337 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.343 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.345 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/return
+15:41:40.345 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/return
+15:41:40.351 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/books/1/borrow
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.library.book.controller.BookController
+           Method = com.library.book.controller.BookController#borrowBook(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json;charset=UTF-8
+             Body = {"success":true,"message":"도서 대여 성공","data":{"id":1,"libraryId":1,"libraryName":"서울시립도서관","title":"스프링 부트 실전 활용","author":"김철수","isbn":"978-1234567890","publisher":"테크출판사","publicationYear":2023,"category":"컴퓨터/IT","totalCopies":3,"availableCopies":0,"status":"AVAILABLE","createdAt":"2025-07-08T15:41:37.742764","updatedAt":"2025-07-08T15:41:40.342819","categoryInfo":{"name":"컴퓨터/IT","description":"프로그래밍, 소프트웨어, 하드웨어, 네트워크 관련 도서","isStandard":true,"subCategories":["프로그래밍","데이터베이스","네트워크","AI/ML","웹개발"]}},"timestamp":1751956900343}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/books/1/return
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.library.book.controller.BookController
+           Method = com.library.book.controller.BookController#returnBook(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json;charset=UTF-8
+             Body = {"success":true,"message":"도서 반납 성공","data":{"id":1,"libraryId":1,"libraryName":"서울시립도서관","title":"스프링 부트 실전 활용","author":"김철수","isbn":"978-1234567890","publisher":"테크출판사","publicationYear":2023,"category":"컴퓨터/IT","totalCopies":3,"availableCopies":1,"status":"AVAILABLE","createdAt":"2025-07-08T15:41:37.742764","updatedAt":"2025-07-08T15:41:40.349868","categoryInfo":{"name":"컴퓨터/IT","description":"프로그래밍, 소프트웨어, 하드웨어, 네트워크 관련 도서","isStandard":true,"subCategories":["프로그래밍","데이터베이스","네트워크","AI/ML","웹개발"]}},"timestamp":1751956900350}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+15:41:40.358 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books
+15:41:40.358 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books
+15:41:40.361 [Test worker] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: (was java.lang.UnsupportedOperationException)]
+15:41:40.361 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/books
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8", Content-Length:"332"]
+             Body = {"libraryId":1,"title":"테스트 도서","author":"테스트 저자","isbn":"978-1234567890","publisher":"테스트 출판사","publicationYear":2023,"category":"컴퓨터/IT","totalCopies":2,"availableCopies":2,"status":"AVAILABLE","normalizedCategory":"컴퓨터/IT","isValidCategory":true,"categorySuggestions":["컴퓨터/IT"]}
+    Session Attrs = {}
+
+Handler:
+             Type = com.library.book.controller.BookController
+           Method = com.library.book.controller.BookController#createBook(BookCreateRequestDto)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = org.springframework.http.converter.HttpMessageNotReadableException
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 400
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+15:41:40.366 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/stats/library/1/total
+15:41:40.367 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/stats/library/1/total
+15:41:40.375 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=?
+Hibernate: 
+    select
+        count(b1_0."id") 
+    from
+        "books" b1_0 
+    where
+        b1_0."library_id"=?
+15:41:40.377 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.383 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing POST /api/books/1/borrow
+15:41:40.383 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured POST /api/books/1/borrow
+15:41:40.383 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.384 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.386 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/books/1/borrow
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.library.book.controller.BookController
+           Method = com.library.book.controller.BookController#borrowBook(long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = application/json;charset=UTF-8
+             Body = {"success":true,"message":"도서 대여 성공","data":{"id":1,"libraryId":1,"libraryName":"서울시립도서관","title":"스프링 부트 실전 활용","author":"김철수","isbn":"978-1234567890","publisher":"테크출판사","publicationYear":2023,"category":"컴퓨터/IT","totalCopies":3,"availableCopies":0,"status":"AVAILABLE","createdAt":"2025-07-08T15:41:37.742764","updatedAt":"2025-07-08T15:41:40.38566","categoryInfo":{"name":"컴퓨터/IT","description":"프로그래밍, 소프트웨어, 하드웨어, 네트워크 관련 도서","isStandard":true,"subCategories":["프로그래밍","데이터베이스","네트워크","AI/ML","웹개발"]}},"timestamp":1751956900386}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+15:41:40.392 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books
+15:41:40.392 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books
+15:41:40.393 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0
+15:41:40.394 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.394 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.395 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.395 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.396 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.397 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.400 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing DELETE /api/books/1
+15:41:40.401 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured DELETE /api/books/1
+15:41:40.401 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."id"=?
+15:41:40.402 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.404 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.405 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/1
+15:41:40.405 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/1
+15:41:40.405 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.408 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/search
+15:41:40.408 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/search
+15:41:40.409 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        (
+            ? is null 
+            or lower(b1_0."title") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."author") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."category"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."library_id"=?
+        ) 
+        and (
+            ? is null 
+            or b1_0."isbn"=?
+        ) 
+        and (
+            ? is null 
+            or lower(b1_0."publisher") like lower(('%'||?||'%')) escape ''
+        ) 
+        and (
+            ? is null 
+            or b1_0."status"=?
+        ) 
+    order by
+        b1_0."created_at" desc
+15:41:40.410 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.411 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:41:40.415 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/books/available
+15:41:40.415 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/books/available
+15:41:40.418 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+Hibernate: 
+    select
+        b1_0."id",
+        b1_0."author",
+        b1_0."available_copies",
+        b1_0."category",
+        b1_0."created_at",
+        b1_0."isbn",
+        b1_0."library_id",
+        b1_0."publication_year",
+        b1_0."publisher",
+        b1_0."status",
+        b1_0."title",
+        b1_0."total_copies",
+        b1_0."updated_at" 
+    from
+        "books" b1_0 
+    where
+        b1_0."available_copies">0 
+        and b1_0."status"='AVAILABLE'
+15:41:40.418 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.419 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.420 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.420 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.421 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0 
+    where
+        l1_0."id"=?
+15:41:40.422 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
