@@ -1,112 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="도서관 도메인 통합 테스트" tests="13" skipped="0" failures="1" errors="0" timestamp="2025-07-08T06:41:40" hostname="deviantces-Mac-mini.local" time="0.089">
+<testsuite name="도서관 도메인 통합 테스트" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-07-08T06:56:22" hostname="deviantces-Mac-mini.local" time="0.077">
   <properties/>
-  <testcase name="도서관 이름으로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.018"/>
+  <testcase name="도서관 이름으로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.014"/>
   <testcase name="데이터 유효성 검증 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.005"/>
-  <testcase name="도서관 위치 기반 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.006"/>
-  <testcase name="도서관 ID로 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.004"/>
-  <testcase name="존재하지 않는 도서관 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.003"/>
-  <testcase name="동시성 테스트 - 여러 사용자가 동시에 조회" classname="com.library.library.LibraryIntegrationTest" time="0.012">
-    <failure message="java.lang.AssertionError: 일부 요청이 완료되지 않았습니다" type="java.lang.AssertionError">java.lang.AssertionError: 일부 요청이 완료되지 않았습니다
-	at com.library.library.LibraryIntegrationTest.concurrencyTestGetLibraries(LibraryIntegrationTest.kt:243)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
-	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
-	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
-	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
-	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:119)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:94)
-	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:89)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</failure>
-  </testcase>
-  <testcase name="모든 도서관 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.007"/>
-  <testcase name="도서관 주소로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.007"/>
-  <testcase name="성능 테스트 - 모든 도서관 조회" classname="com.library.library.LibraryIntegrationTest" time="0.005"/>
-  <testcase name="잘못된 매개변수로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.004"/>
-  <testcase name="API 응답 구조 검증 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.006"/>
-  <testcase name="빈 검색 조건으로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.007"/>
+  <testcase name="도서관 위치 기반 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.007"/>
+  <testcase name="도서관 ID로 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.003"/>
+  <testcase name="존재하지 않는 도서관 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.002"/>
+  <testcase name="동시성 테스트 - 여러 사용자가 동시에 조회" classname="com.library.library.LibraryIntegrationTest" time="0.018"/>
+  <testcase name="모든 도서관 조회 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.004"/>
+  <testcase name="도서관 주소로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.005"/>
+  <testcase name="성능 테스트 - 모든 도서관 조회" classname="com.library.library.LibraryIntegrationTest" time="0.003"/>
+  <testcase name="잘못된 매개변수로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.003"/>
+  <testcase name="API 응답 구조 검증 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.004"/>
+  <testcase name="빈 검색 조건으로 검색 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.005"/>
   <testcase name="복합 검색 조건 API 테스트" classname="com.library.library.LibraryIntegrationTest" time="0.004"/>
-  <system-out><![CDATA[15:41:40.427 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.library.LibraryIntegrationTest]: LibraryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:41:40.432 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.library.LibraryIntegrationTest
-15:41:40.435 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.435 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.441 [Test worker] DEBUG org.hibernate.SQL - 
+  <system-out><![CDATA[15:56:22.580 [Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.library.library.LibraryIntegrationTest]: LibraryIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:56:22.584 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.library.LibraryManagementApplication for test class com.library.library.LibraryIntegrationTest
+15:56:22.586 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.586 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.592 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -138,10 +50,10 @@ Hibernate:
         "libraries" l1_0 
     where
         upper(l1_0."name") like upper(?) escape '\'
-15:41:40.450 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.453 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
-15:41:40.453 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
-15:41:40.454 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.598 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.601 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
+15:56:22.601 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
+15:56:22.601 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -173,10 +85,10 @@ Hibernate:
         "libraries" l1_0 
     where
         l1_0."id"=?
-15:41:40.455 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.458 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.458 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.460 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.603 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.606 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.606 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.609 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -210,10 +122,10 @@ Hibernate:
     where
         l1_0."latitude" between ? and ? 
         and l1_0."longitude" between ? and ?
-15:41:40.462 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.464 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
-15:41:40.464 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
-15:41:40.465 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.611 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.613 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/1
+15:56:22.613 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/1
+15:56:22.613 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -245,10 +157,10 @@ Hibernate:
         "libraries" l1_0 
     where
         l1_0."id"=?
-15:41:40.466 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.468 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/999
-15:41:40.468 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/999
-15:41:40.469 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.614 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.616 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/999
+15:56:22.616 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/999
+15:56:22.616 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -280,20 +192,28 @@ Hibernate:
         "libraries" l1_0 
     where
         l1_0."id"=?
-15:41:40.469 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.471 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.471 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.471 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.471 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.471 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.471 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.472 [Thread-15] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.472 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.472 [Thread-15] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.471 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.472 [Thread-16] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.472 [Thread-16] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.473 [Thread-11] DEBUG org.hibernate.SQL - 
+15:56:22.616 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.618 [Thread-6] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.618 [Thread-5] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.618 [Thread-5] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.618 [Thread-6] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.618 [Thread-7] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-7] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-9] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-8] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-9] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-12] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.619 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-11] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-8] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.619 [Thread-10] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.620 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.620 [Thread-14] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.620 [Thread-7] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -321,7 +241,7 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.473 [Thread-12] DEBUG org.hibernate.SQL - 
+15:56:22.621 [Thread-12] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -349,8 +269,8 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.471 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.473 [Thread-10] DEBUG org.hibernate.SQL - 
+15:56:22.622 [Thread-12] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.623 [Thread-13] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -378,8 +298,8 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.473 [Thread-13] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.473 [Thread-14] DEBUG org.hibernate.SQL - 
+15:56:22.624 [Thread-7] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.624 [Thread-5] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -407,39 +327,9 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.474 [Thread-11] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.474 [Thread-17] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.475 [Thread-17] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.475 [Thread-16] DEBUG org.hibernate.SQL - 
-    select
-        l1_0."id",
-        l1_0."address",
-        l1_0."created_at",
-        l1_0."description",
-        l1_0."latitude",
-        l1_0."longitude",
-        l1_0."name",
-        l1_0."opening_hours",
-        l1_0."phone",
-        l1_0."updated_at" 
-    from
-        "libraries" l1_0
-Hibernate: 
-    select
-        l1_0."id",
-        l1_0."address",
-        l1_0."created_at",
-15:41:40.475 [Thread-12] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-        l1_0."description",
-        l1_0."latitude",
-        l1_0."longitude",
-        l1_0."name",
-        l1_0."opening_hours",
-        l1_0."phone",
-        l1_0."updated_at" 
-    from
-        "libraries" l1_0
-15:41:40.475 [Thread-15] DEBUG org.hibernate.SQL - 
+15:56:22.625 [Thread-13] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.625 [Thread-5] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.625 [Thread-6] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -467,7 +357,7 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.476 [Thread-17] DEBUG org.hibernate.SQL - 
+15:56:22.630 [Thread-9] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -495,14 +385,9 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.476 [Thread-18] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.476 [Thread-18] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.476 [Thread-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.476 [Thread-15] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.476 [Thread-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.477 [Thread-19] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.477 [Thread-19] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.477 [Thread-13] DEBUG org.hibernate.SQL - 
+15:56:22.630 [Thread-6] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.631 [Thread-9] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.631 [Thread-10] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -530,36 +415,7 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.477 [Thread-18] DEBUG org.hibernate.SQL - 
-    select
-        l1_0."id",
-        l1_0."address",
-        l1_0."created_at",
-        l1_0."description",
-        l1_0."latitude",
-        l1_0."longitude",
-        l1_0."name",
-        l1_0."opening_hours",
-        l1_0."phone",
-        l1_0."updated_at" 
-    from
-        "libraries" l1_0
-15:41:40.476 [Thread-16] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-Hibernate: 
-    select
-        l1_0."id",
-        l1_0."address",
-        l1_0."created_at",
-        l1_0."description",
-        l1_0."latitude",
-        l1_0."longitude",
-        l1_0."name",
-        l1_0."opening_hours",
-        l1_0."phone",
-        l1_0."updated_at" 
-    from
-        "libraries" l1_0
-15:41:40.477 [Thread-19] DEBUG org.hibernate.SQL - 
+15:56:22.631 [Thread-11] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -587,13 +443,9 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.478 [Thread-19] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.479 [Thread-17] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.479 [Thread-18] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.479 [Thread-13] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.484 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.484 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.485 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.632 [Thread-10] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.632 [Thread-11] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.632 [Thread-8] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -621,10 +473,70 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.487 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.491 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.491 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.493 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.632 [Thread-14] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0
+15:56:22.633 [Thread-8] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.633 [Thread-14] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.636 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.636 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.636 [Test worker] DEBUG org.hibernate.SQL - 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0
+Hibernate: 
+    select
+        l1_0."id",
+        l1_0."address",
+        l1_0."created_at",
+        l1_0."description",
+        l1_0."latitude",
+        l1_0."longitude",
+        l1_0."name",
+        l1_0."opening_hours",
+        l1_0."phone",
+        l1_0."updated_at" 
+    from
+        "libraries" l1_0
+15:56:22.637 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.640 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.640 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.641 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -656,10 +568,10 @@ Hibernate:
         "libraries" l1_0 
     where
         upper(l1_0."address") like upper(?) escape '\'
-15:41:40.495 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.499 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.499 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.500 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.643 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.645 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.645 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.645 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -687,14 +599,14 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.501 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.503 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.503 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.504 [Test worker] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Double'; For input string: "invalid"]
-15:41:40.504 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.507 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
-15:41:40.507 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
-15:41:40.508 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.646 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.648 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.648 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.649 [Test worker] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Double'; For input string: "invalid"]
+15:56:22.649 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.650 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries
+15:56:22.650 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries
+15:56:22.651 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -722,10 +634,10 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.509 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.513 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.514 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.516 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.652 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.654 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.654 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.655 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -753,10 +665,10 @@ Hibernate:
         l1_0."updated_at" 
     from
         "libraries" l1_0
-15:41:40.517 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
-15:41:40.520 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
-15:41:40.520 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
-15:41:40.521 [Test worker] DEBUG org.hibernate.SQL - 
+15:56:22.657 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.660 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Securing GET /api/libraries/search
+15:56:22.660 [Test worker] DEBUG o.s.security.web.FilterChainProxy - Secured GET /api/libraries/search
+15:56:22.661 [Test worker] DEBUG org.hibernate.SQL - 
     select
         l1_0."id",
         l1_0."address",
@@ -788,7 +700,7 @@ Hibernate:
         "libraries" l1_0 
     where
         upper(l1_0."name") like upper(?) escape '\'
-15:41:40.522 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
+15:56:22.661 [Test worker] DEBUG o.s.s.w.a.AnonymousAuthenticationFilter - Set SecurityContextHolder to anonymous SecurityContext
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

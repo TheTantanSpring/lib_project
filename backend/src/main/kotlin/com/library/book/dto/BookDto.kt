@@ -1,5 +1,6 @@
 package com.library.book.dto
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.library.book.entity.Book
 import com.library.book.entity.BookCategories
 import com.library.book.entity.BookStatus
@@ -99,16 +100,19 @@ data class BookCreateRequestDto(
     val status: BookStatus = BookStatus.AVAILABLE
 ) {
     // 확장 고려: 카테고리 정규화 메서드 (추후 더 복잡한 로직으로 확장 가능)
+    @JsonIgnore
     fun getNormalizedCategory(): String? {
         return category?.let { BookCategories.normalizeCategory(it) }
     }
     
     // 확장 고려: 카테고리 유효성 검증 (추후 DB 기반 검증으로 확장 가능)
+    @JsonIgnore
     fun isValidCategory(): Boolean {
         return BookCategories.isValidCategory(category)
     }
     
     // 확장 고려: 카테고리 제안 기능 (추후 AI 기반으로 확장 가능)
+    @JsonIgnore
     fun getCategorySuggestions(): List<String> {
         return if (category.isNullOrBlank()) {
             emptyList()
@@ -131,11 +135,13 @@ data class BookUpdateRequestDto(
     val status: BookStatus? = null
 ) {
     // 확장 고려: 카테고리 정규화 (추후 더 복잡한 로직으로 확장 가능)
+    @JsonIgnore
     fun getNormalizedCategory(): String? {
         return category?.let { BookCategories.normalizeCategory(it) }
     }
     
     // 확장 고려: 카테고리 유효성 검증 (추후 DB 기반으로 확장 가능)
+    @JsonIgnore
     fun isValidCategory(): Boolean {
         return category == null || BookCategories.isValidCategory(category)
     }
@@ -154,11 +160,13 @@ data class BookSearchRequestDto(
     val includeSubCategories: Boolean = false
 ) {
     // 확장 고려: 검색 조건 정규화 (추후 복잡한 검색 로직으로 확장 가능)
+    @JsonIgnore
     fun getNormalizedCategory(): String? {
         return category?.let { BookCategories.normalizeCategory(it) }
     }
     
     // 확장 고려: 카테고리 검색 확장 (하위 카테고리 포함)
+    @JsonIgnore
     fun getExpandedCategories(): List<String> {
         return if (category.isNullOrBlank()) {
             emptyList()
@@ -172,6 +180,7 @@ data class BookSearchRequestDto(
     }
     
     // 확장 고려: 빈 검색 조건 체크 (추후 복잡한 검증으로 확장 가능)
+    @JsonIgnore
     fun hasSearchCriteria(): Boolean {
         return !title.isNullOrBlank() ||
                 !author.isNullOrBlank() ||
