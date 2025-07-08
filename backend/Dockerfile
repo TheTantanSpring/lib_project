@@ -1,5 +1,5 @@
 # Stage 1: Gradle을 사용하여 애플리케이션 빌드
-FROM gradle:8.5-jdk17-alpine AS build
+FROM gradle:8.7-jdk17 AS build
 WORKDIR /home/gradle/src
 
 # 빌드 컨텍스트를 복사합니다.

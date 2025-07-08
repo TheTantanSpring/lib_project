@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server"
 import type { Library, ApiResponse } from "@/types/library"
 
-const BACKEND = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8080"
+// Docker 컨테이너 내부에서는 서비스 이름을 사용, 로컬에서는 localhost 사용
+const BACKEND = process.env.NEXT_PUBLIC_API_BASE_URL ?? 
+  (process.env.NODE_ENV === 'production' ? "http://backend:8080" : "http://localhost:8080")
 
 /**
  * /api/libraries
